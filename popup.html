@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datos Aleatorios ES</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <div class="logo-dot" aria-hidden="true"></div>
+        <div>
+          <h1>Datos Aleatorios ES</h1>
+          <p>Rellena formularios en un clic</p>
+        </div>
+      </div>
+      <button id="regen" type="button">Regenerar todo</button>
+    </header>
+
+    <main id="list" aria-live="polite"></main>
+
+    <template id="item-template">
+      <section class="card">
+        <div class="card-head">
+          <h2 class="label"></h2>
+          <button class="copy" type="button">Copiar</button>
+        </div>
+        <div class="value"></div>
+      </section>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
