@@ -2,6 +2,9 @@
 
 Extension de Chrome para generar datos aleatorios utiles al rellenar formularios en Espana. Incluye DNI, NIE, CIF, pasaporte, IBAN, tarjeta, telefono, email, nombre, direccion, codigo postal, fecha de nacimiento y contrasena, con boton de copia.
 
+<img width="778" height="602" alt="image" src="https://github.com/user-attachments/assets/37a7eca1-e08e-4ed4-b0e1-e37c724fb566" />
+
+
 ## Caracteristicas
 
 - Generadores listos para datos personales y bancarios de prueba
