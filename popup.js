@@ -1,17 +1,20 @@
 const items = [
-  { key: "dni", label: "DNI", generate: generateDni },
-  { key: "nie", label: "NIE", generate: generateNie },
-  { key: "cif", label: "CIF", generate: generateCif },
-  { key: "pasaporte", label: "Pasaporte", generate: generatePassport },
-  { key: "iban", label: "IBAN", generate: generateIban },
-  { key: "tarjeta", label: "Tarjeta credito", generate: generateCard },
-  { key: "telefono", label: "Telefono", generate: generatePhone },
-  { key: "email", label: "Email", generate: generateEmail },
-  { key: "nombre", label: "Nombre completo", generate: generateFullName },
-  { key: "direccion", label: "Direccion", generate: generateAddress },
-  { key: "cp", label: "Codigo postal", generate: generatePostalCode },
-  { key: "fecha", label: "Fecha nacimiento", generate: generateBirthDate },
-  { key: "contrasena", label: "Contrasena", generate: generatePassword }
+  { key: "dni", label: "DNI", group: "Identificacion", generate: generateDni },
+  { key: "nie", label: "NIE", group: "Identificacion", generate: generateNie },
+  { key: "cif", label: "CIF", group: "Identificacion", generate: generateCif },
+  { key: "pasaporte", label: "Pasaporte", group: "Identificacion", generate: generatePassport },
+  { key: "iban", label: "IBAN", group: "Finanzas", generate: generateIban },
+  { key: "tarjeta", label: "Tarjeta credito", group: "Finanzas", generate: generateCard },
+  { key: "telefono", label: "Telefono", group: "Contacto", generate: generatePhone },
+  { key: "email", label: "Email", group: "Contacto", generate: generateEmail },
+  { key: "direccion", label: "Direccion", group: "Contacto", generate: generateAddress },
+  { key: "cp", label: "Codigo postal", group: "Contacto", generate: generatePostalCode },
+  { key: "nombre", label: "Nombre completo", group: "Personal", generate: generateFullName },
+  { key: "nombre_pila", label: "Nombre", group: "Personal", generate: generateFirstName },
+  { key: "apellido1", label: "Apellido 1", group: "Personal", generate: generateSurname1 },
+  { key: "apellido2", label: "Apellido 2", group: "Personal", generate: generateSurname2 },
+  { key: "fecha", label: "Fecha nacimiento", group: "Personal", generate: generateBirthDate },
+  { key: "contrasena", label: "Contrasena", group: "Seguridad", generate: generatePassword }
 ];
 
 const list = document.getElementById("list");
@@ -148,10 +151,175 @@ function generateEmail() {
 }
 
 function generateFullName() {
-  const name = pick(["Mario", "Lucia", "Carlos", "Ines", "Sofia", "Hugo", "Nuria", "Daniel", "Aitana"]);
-  const surname = pick(["Rojas", "Lopez", "Soto", "Diaz", "Martin", "Vega", "Ruiz", "Navarro"]);
-  const surname2 = pick(["Gomez", "Sanz", "Iglesias", "Ortega", "Cruz", "Silva", "Molina"]);
+  const name = generateFirstName();
+  const surname = generateSurname1();
+  const surname2 = generateSurname2();
   return `${name} ${surname} ${surname2}`;
+}
+
+function generateFirstName() {
+  return pick([
+    "Alejandro",
+    "Alvaro",
+    "Ana",
+    "Andres",
+    "Antonio",
+    "Beatriz",
+    "Carlos",
+    "Carmen",
+    "Clara",
+    "Cristina",
+    "Daniel",
+    "David",
+    "Diego",
+    "Elena",
+    "Eva",
+    "Francisco",
+    "Gabriel",
+    "Gloria",
+    "Guillermo",
+    "Hugo",
+    "Irene",
+    "Isabel",
+    "Javier",
+    "Jorge",
+    "Jose",
+    "Juan",
+    "Laura",
+    "Lucia",
+    "Luis",
+    "Manuel",
+    "Maria",
+    "Marta",
+    "Martin",
+    "Miguel",
+    "Nerea",
+    "Nuria",
+    "Pablo",
+    "Patricia",
+    "Raul",
+    "Rocio",
+    "Ruben",
+    "Sara",
+    "Sergio",
+    "Sofia",
+    "Teresa",
+    "Victor",
+    "Violeta",
+    "Aitana",
+    "Adrian",
+    "Paula"
+  ]);
+}
+
+function generateSurname1() {
+  return pick([
+    "Alvarez",
+    "Arias",
+    "Blanco",
+    "Cabrera",
+    "Calvo",
+    "Campos",
+    "Castillo",
+    "Cortes",
+    "Cruz",
+    "Delgado",
+    "Diaz",
+    "Dominguez",
+    "Duran",
+    "Fernandez",
+    "Flores",
+    "Garrido",
+    "Garcia",
+    "Gimenez",
+    "Gomez",
+    "Gonzalez",
+    "Guerrero",
+    "Gutierrez",
+    "Hernandez",
+    "Herrera",
+    "Iglesias",
+    "Jimenez",
+    "Leon",
+    "Lopez",
+    "Marin",
+    "Martin",
+    "Mendez",
+    "Molina",
+    "Morales",
+    "Moreno",
+    "Munoz",
+    "Navarro",
+    "Ortega",
+    "Perez",
+    "Prieto",
+    "Ramirez",
+    "Ramos",
+    "Rodriguez",
+    "Romero",
+    "Rubio",
+    "Ruiz",
+    "Sanchez",
+    "Serrano",
+    "Soto",
+    "Torres",
+    "Vega"
+  ]);
+}
+
+function generateSurname2() {
+  return pick([
+    "Alonso",
+    "Aguilar",
+    "Benitez",
+    "Cano",
+    "Carmona",
+    "Carrasco",
+    "Cortes",
+    "Cruz",
+    "Delgado",
+    "Diaz",
+    "Dominguez",
+    "Escobar",
+    "Ferrer",
+    "Fuentes",
+    "Gallardo",
+    "Garcia",
+    "Gil",
+    "Gomez",
+    "Gonzalez",
+    "Guerrero",
+    "Gutierrez",
+    "Hernandez",
+    "Herrera",
+    "Iglesias",
+    "Jimenez",
+    "Lorenzo",
+    "Lozano",
+    "Marquez",
+    "Martinez",
+    "Medina",
+    "Miranda",
+    "Molina",
+    "Morales",
+    "Moreno",
+    "Moya",
+    "Navarro",
+    "Ortega",
+    "Pascual",
+    "Perez",
+    "Prieto",
+    "Ramos",
+    "Rey",
+    "Rodriguez",
+    "Romero",
+    "Santos",
+    "Sanz",
+    "Serrano",
+    "Silva",
+    "Soto",
+    "Vazquez"
+  ]);
 }
 
 function generateAddress() {
@@ -178,20 +346,45 @@ function generatePassword() {
 
 function render() {
   list.innerHTML = "";
-  items.forEach((item, index) => {
-    const node = template.content.cloneNode(true);
-    const card = node.querySelector(".card");
-    const label = node.querySelector(".label");
-    const value = node.querySelector(".value");
-    const copy = node.querySelector(".copy");
+  const groups = new Map();
+  items.forEach((item) => {
+    if (!groups.has(item.group)) groups.set(item.group, []);
+    groups.get(item.group).push(item);
+  });
 
-    const generated = item.generate();
-    label.textContent = item.label;
-    value.textContent = generated;
-    copy.dataset.value = generated;
-    card.style.animationDelay = `${index * 0.05}s`;
+  let index = 0;
+  groups.forEach((groupItems, groupName) => {
+    const group = document.createElement("section");
+    group.className = "group";
 
-    list.appendChild(node);
+    const title = document.createElement("h3");
+    title.className = "group-title";
+    title.textContent = groupName;
+    group.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "group-grid";
+
+    groupItems.forEach((item) => {
+      const node = template.content.cloneNode(true);
+      const card = node.querySelector(".card");
+      const label = node.querySelector(".label");
+      const value = node.querySelector(".value");
+      const copy = node.querySelector(".copy");
+
+      const generated = item.generate();
+      label.textContent = item.label;
+      value.textContent = generated;
+      value.title = generated;
+      copy.dataset.value = generated;
+      card.style.animationDelay = `${index * 0.05}s`;
+      index += 1;
+
+      grid.appendChild(node);
+    });
+
+    group.appendChild(grid);
+    list.appendChild(group);
   });
 }
 
@@ -217,7 +410,8 @@ async function copyValue(button) {
   setTimeout(() => {
     button.classList.remove("copied");
     button.textContent = original;
-  }, 1200);
+    window.close();
+  }, 300);
 }
 
 list.addEventListener("click", (event) => {
