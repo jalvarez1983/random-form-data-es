@@ -1,4 +1,4 @@
-# Random Form Data ES
+# Random Form Data
 
 Extension de Chrome para generar datos aleatorios utiles al rellenar formularios en Espana. Incluye DNI, NIE, CIF, pasaporte, IBAN, tarjeta, telefono, email, nombre, direccion, codigo postal, fecha de nacimiento y contrasena, con boton de copia.
 
