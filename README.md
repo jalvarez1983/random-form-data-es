@@ -31,5 +31,5 @@ Los datos generados son ficticios y solo deben usarse para pruebas.
 
 ## Nombre de la extension
 
-Datos Aleatorios ES
+Datos Aleatorios
 
